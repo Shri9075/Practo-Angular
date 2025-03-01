@@ -1,0 +1,160 @@
+<div class="img">
+
+
+
+<div class="row " >
+    <div class="col-8">
+        <div class="row">
+            @for( item of appointmentHospitalData ; track $index){
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{item.appointmentId}}</h5>
+                            <h5 class="card-title">{{item.appointmentDate | date}}</h5>
+                            <a class="card-title">{{item.appointmentTime}}</a>
+                            <h5 class="card-title">{{item.name}}</h5>
+                            <h5 class="card-title">{{item.mobileNo}}</h5>
+                            <p class="card-text">{{item.naration}}</p>
+                            <button type="button" class="btn btn-warning"  (click)="onBookingAppointment()" data-mdb-ripple-init>Book Appointment</button>
+                            <button type="button" class="btn btn-danger mx-3 my-3"   (click)="deleteAppointment()" data-mdb-ripple-init>Cancel</button>
+
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="card mx-8">
+            <div class="row">
+                <div class="col-12 mx-3 text-center bg-warning rounded mt-2">
+                    <strong> New Appointment</strong>
+                </div>
+            </div>
+            <form class="mx-1 mx-md-4" #form ='ngForm'>
+
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <div class="d-flex flex-row align-items-center mb-4">
+                            <i class="fa fa-user fa-lg me-3 fa-fw"></i>
+                            <input type="text"  #name="ngModel" name="name" [(ngModel)]="newAppointmentObj.name" name="name"
+                                [(ngModel)]="newAppointmentObj.name" placeholder="Enter Name" class="form-control" required  minlength="4"/>
+                        </div>
+
+                        <div class="text-danger">
+                            @if((name.touched || name.dirty) && name.errors?.['required']){
+                            <span><strong>This is required</strong></span>
+                            } @else if( (name.touched || name.dirty) && name.errors?.['minlength']){
+                            <span><strong>Minimum 4 Characters required</strong></span>
+                            }
+            
+            
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+                <div class="row mt-2">
+                    <div class="col-6">
+                        <div class="d-flex flex-row align-items-center mb-4">
+                            <i class="fa fa-phone fa-lg me-3 fa-fw"></i>
+                            <div class="   mb-0">
+                                <input type="text" name="mobileNo" [(ngModel)]="newAppointmentObj.mobileNo"
+                                    id="form3Example1c" placeholder="Enter Mobile No" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="d-flex flex-row align-items-center mb-4">
+                            <i class="fa fa-map-marker fa-lg me-3 fa-fw"></i>
+                            <div class="   mb-0">
+                                <input type="text" name="city" [(ngModel)]="newAppointmentObj.city" id="form3Example1c"
+                                    placeholder="Enter City" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-2">
+                    <div class="col-6">
+                        <div class="d-flex flex-row align-items-center mb-4">
+                            <i class="fa fa-calendar fa-lg me-3 fa-fw"></i>
+                            <div class="   mb-0">
+                                <input type="text" name="age" [(ngModel)]="newAppointmentObj.age" id="form3Example1c"
+                                    placeholder="Enter Age" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="d-flex flex-row align-items-center mb-4">
+                            <i class="fa fa-plus-circle fa-lg me-3 fa-fw"></i>
+                            <div class=" flex-fill mb-0">
+                                <input name="isFirstVisit" [(ngModel)]="newAppointmentObj.isFirstVisit" type="checkbox"
+                                    id="form3Example3c" /> Is First
+                                Time
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-12 mt-2">
+                        <div class="d-flex flex-row align-items-center mb-4">
+                            <i class="fa fa-user fa-lg me-3 fa-fw"></i>
+                            <div class="   mb-0">
+                                <input  name="gender" [(ngModel)]="newAppointmentObj.gender"  type="radio" id="form3Example1c" value="Male" />
+                                Male
+                                <input  name="gender" [(ngModel)]="newAppointmentObj.gender"type="radio" id="form3Example1c" value="FeMale" /> FeMale
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row mt-2">
+                    <div class="col-6">
+                        <div class="d-flex flex-row align-items-center mb-4">
+                            <i class="fa fa-user fa-lg me-3 fa-fw"></i>
+                            <div class="   mb-0">
+                                <input name="appointmentDate"  [(ngModel)]="newAppointmentObj.appointmentDate"   type="date" id="form3Example1c" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="d-flex flex-row align-items-center mb-4">
+                            <i class="fa fa-clock-o fa-lg me-3 fa-fw"></i>
+                            <div class="   mb-0">
+                                <input type="text" name="appointmentTime" [(ngModel)]="newAppointmentObj.appointmentTime" id="form3Example1c"
+                                    placeholder="Enter Appointment Time" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 mt-2">
+                        <div class="d-flex flex-row align-items-center mb-4">
+                            <i class="fa fa-file-text fa-lg me-3 fa-fw"></i>
+                            <div class=" flex-fill mb-0">
+                                <textarea name="naration" [(ngModel)]="newAppointmentObj.naration"  placeholder="Enter Naration" rows="3" class="form-control"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                    <button type="button"  [disabled]="form.invalid"   class="btn btn-primary btn-lg" (click)="BookingAppointment()">Book
+                        Appointment</button>
+                        
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+</div>
+</div>

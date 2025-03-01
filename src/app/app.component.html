@@ -1,0 +1,109 @@
+
+
+<nav class="navbar navbar-expand-sm navbar-light bg-info ">
+    <div class="container-fluid">
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mynavbar">
+            <ul class="navbar-nav me-auto">
+
+
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/dashboard"><h4><strong>Home</strong></h4></a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link" routerLink="/registartion"><h4><strong> Patient Registration</strong></h4></a>
+                </li> -->
+
+ 
+
+                <li class="nav-item">
+                    <a class="nav-link" *ngIf="loogedHospitalData.hospitalId !== 0" routerLink="appointment-list"><h4><strong>Appointment</strong></h4></a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" *ngIf="loogedHospitalData.hospitalId !== 0" routerLink="patients"> <h4><strong>Patient</strong></h4></a>
+                </li>
+
+
+
+                <!-- <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" routerLink="/" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Form
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" routerLink="template-form">Templte-Form</a>
+              </li>
+              <li><a class="dropdown-item" routerLink="reactive-form">Reactive-Form</a>
+              </li>
+  
+            </ul>
+          </li> -->
+
+
+            </ul>
+            <form class="d-flex">
+                <!-- <select class="mx-5" name="selectedRole">
+                    <option value="">Select Role</option>
+                    <option value="user">User</option>
+                    <option value="guest">Admin</option>
+                </select> -->
+                <span><strong style="color: white; margin-right: 15px;margin-top: auto;"></strong></span>
+                <!-- <button class="btn btn-primary" (click)="showLogin()">Login</button> -->
+    <div class="d-flex">
+        <button type="button" class="btn btn-info btn-lg mx-3 btn-sm" data-toggle="modal" data-target="#loginModal"
+        *ngIf="loogedHospitalData.hospitalId !== 0" ><h4>{{loogedHospitalData.hospitalEmailId}}</h4></button>
+    </div>
+                <button type="button" class="btn btn-primary btn-lg mx-3 btn-sm" data-toggle="modal" data-target="#loginModal"
+                *ngIf="loogedHospitalData.hospitalId == 0"   (click)="showLogin()">Login</button>
+
+                <button class="btn btn-danger btn-sm"  *ngIf="loogedHospitalData.hospitalId !== 0" (click)="logoff()">Log-off</button>
+            </form>
+
+        </div>
+    </div>
+</nav>
+
+
+
+<router-outlet></router-outlet>
+
+<div class="container">
+
+    <div class="modal fade" id="loginModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" (click)="closeLogin()" data-dismiss="modal"></button>
+                    <h4 class="modal-title text-center"><strong>Login</strong></h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12">
+                            <label for="" class="form-label">UserName</label>
+                            <input type="text"  [(ngModel)]="UserObj.userName"  name="userName" class="form-control" />
+                        </div>
+                        <div class="col-12">
+                            <label for="" class="form-label">Password</label>
+                            <input type="password"  [(ngModel)]="UserObj.password" name="password" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal"
+                        (click)="closeLogin()">Close</button>
+                        <button type="button"  class="btn btn-primary mx-3" 
+                        (click)="LoginUser()">Login</button>
+                   
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

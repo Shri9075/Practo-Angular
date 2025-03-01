@@ -1,0 +1,21 @@
+.form-control {
+    border: 1px solid black !important;
+}
+
+.form-select {
+    border: 1px solid black !important;
+}
+/* .sect1 {
+    height: 650px;
+    color: 
+  #fff;
+    background-image: url("../../../public/Assests/back-2.png");
+    background-size: 100%; 
+    object-fit: contain;
+  } */
+
+  .img{
+    background-image: url("../../../public/Assests/back-2.png");
+    background-repeat: no-repeat;
+    background-position-x: inherit;
+  }

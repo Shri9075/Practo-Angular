@@ -1,0 +1,271 @@
+<div class="container img">
+  <section class="h-100 h-custom gradient-custom-2">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12">
+          <div class="card card-registration card-registration-2" style="border-radius: 15px;">
+            <div class="card-body p-0">
+              <div class="row g-0">
+                <div class="col-lg-6">
+                  <div class="p-5">
+                    <h3 class="fw-normal mb-5" style="color: #4835d4;">General Infomation</h3>
+
+
+                    <div class="row">
+                      <div class="col-md-6 mb-4 pb-2">
+
+                        <div data-mdb-input-init class="form-outline">
+                          <input type="text" id="form3Examplev2" class="form-control form-control-lg" />
+                          <label class="form-label" for="form3Examplev2">First name</label>
+                        </div>
+
+                      </div>
+                      <div class="col-md-6 mb-4 pb-2">
+
+                        <div data-mdb-input-init class="form-outline">
+                          <input type="text" id="form3Examplev3" class="form-control form-control-lg" />
+                          <label class="form-label" for="form3Examplev3">Last name</label>
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <div class="mb-4 pb-2">
+                      <select data-mdb-select-init>
+                        <option value="1">Sex</option>
+                        <option value="2">Male</option>
+                        <option value="3">Female</option>
+                        <option value="4">N/A</option>
+                      </select>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-4">
+                        <select>
+                          <option value=''>Please Select Month</option>
+                          <option>January</option>
+                          <option value='2'>February</option>
+                          <option value='3'>March</option>
+                          <option value='4'>April</option>
+                          <option value='5'>May</option>
+                          <option value='6'>June</option>
+                          <option value='7'>July</option>
+                          <option value='8'>August</option>
+                          <option value='9'>September</option>
+                          <option value='10'>October</option>
+                          <option value='11'>November</option>
+                          <option value='12'>December</option>
+                        </select>
+                        <label for="">Month</label>
+                      </div>
+
+                      <div class="col-4">
+                        <select>
+                          <option value=''>Please Select Day</option>
+                          <option value='1'>1</option>
+                          <option value='2'>2</option>
+                          <option value='3'>3</option>
+                          <option value='4'>4</option>
+                          <option value='5'>5</option>
+                          <option value='6'>6</option>
+                          <option value='7'>7</option>
+                          <option value='8'>8</option>
+                          <option value='9'>9</option>
+                          <option value='10'>10</option>
+                          <option value='11'>11</option>
+                          <option value='12'>12</option>
+                          <option value='13'>13</option>
+                          <option value='14'>14</option>
+                          <option value='15'>15</option>
+                          <option value='16'>16</option>
+                          <option value='17'>17</option>
+                          <option value='18'>18</option>
+                          <option value='19'>19</option>
+                          <option value='20'>20</option>
+                          <option value='21'>21</option>
+                          <option value='22'>22</option>
+                          <option value='23'>23</option>
+                          <option value='24'>24</option>
+                          <option value="25">25</option>
+                          <option value='26'>26</option>
+                          <option value='27'>27</option>
+                          <option value='28'>28</option>
+                          <option value='29'>29</option>
+                          <option value='30'>30</option>
+                          <option value='31'>31</option>
+                        </select>
+                        <label for="">Day</label>
+                      </div>
+                      <div class="col-4 ">
+
+                        <select style="padding-inline-start:30px;">
+                          <option value="">Please Select Year</option>
+                          <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+                        </select>
+                        <label for="">Year</label>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-6">
+                        <div class="mb-4 pb-2">
+                          <div data-mdb-input-init class="form-outline">
+                            <input type="text" id="form3Examplev4" class="form-control form-control-lg" />
+                            <label class="form-label" for="form3Examplev4">Phone Number</label>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-6">
+                        <div class="mb-4 pb-2">
+                          <div data-mdb-input-init class="form-outline">
+                            <input type="email" id="form3Examplev4" class="form-control form-control-lg" />
+                            <label class="form-label" for="form3Examplev4">Email Address</label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="mb-4 pb-2">
+                          <div data-mdb-input-init class="form-outline">
+                            <label class="form-label" for="form3Examplev4">
+                              <h6>Address</h6>
+                            </label>
+                            <input type="email" id="form3Examplev4" class="form-control form-control-lg" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-12">
+                        <div class="mb-4 pb-2">
+                          <div data-mdb-input-init class="form-outline">
+
+                            <input type="email" id="form3Examplev4" class="form-control form-control-lg" />
+                            <label class="form-label" for="form3Examplev4">
+                              <span>Street addresss Line 2</span>
+                            </label>         
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+
+                    <div class="row">
+                      <div class="col-md-6 mb-4 pb-2 mb-md-0 pb-md-0">
+
+                        <div data-mdb-input-init class="form-outline">
+                          <input type="text" id="form3Examplev5" class="form-control form-control-lg" />
+                          <label class="form-label" for="form3Examplev5">Bussines Arena</label>
+                        </div>
+
+                      </div>
+                      <div class="col-md-6">
+
+                        <select data-mdb-select-init>
+                          <option value="1">Employees</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                          <option value="4">Four</option>
+                        </select>
+
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <div class="col-lg-6 bg-indigo text-white">
+                  <div class="p-5">
+                    <h3 class="fw-normal mb-5">Contact Details</h3>
+
+                    <div class="mb-4 pb-2">
+                      <div data-mdb-input-init class="form-outline form-white">
+                        <input type="text" id="form3Examplea2" class="form-control form-control-lg" />
+                        <label class="form-label" for="form3Examplea2">Street + Nr</label>
+                      </div>
+                    </div>
+
+                    <div class="mb-4 pb-2">
+                      <div data-mdb-input-init class="form-outline form-white">
+                        <input type="text" id="form3Examplea3" class="form-control form-control-lg" />
+                        <label class="form-label" for="form3Examplea3">Additional Information</label>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-5 mb-4 pb-2">
+
+                        <div data-mdb-input-init class="form-outline form-white">
+                          <input type="text" id="form3Examplea4" class="form-control form-control-lg" />
+                          <label class="form-label" for="form3Examplea4">Zip Code</label>
+                        </div>
+
+                      </div>
+                      <div class="col-md-7 mb-4 pb-2">
+
+                        <div data-mdb-input-init class="form-outline form-white">
+                          <input type="text" id="form3Examplea5" class="form-control form-control-lg" />
+                          <label class="form-label" for="form3Examplea5">Place</label>
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <div class="mb-4 pb-2">
+                      <div data-mdb-input-init class="form-outline form-white">
+                        <input type="text" id="form3Examplea6" class="form-control form-control-lg" />
+                        <label class="form-label" for="form3Examplea6">Country</label>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-5 mb-4 pb-2">
+
+                        <div data-mdb-input-init class="form-outline form-white">
+                          <input type="text" id="form3Examplea7" class="form-control form-control-lg" />
+                          <label class="form-label" for="form3Examplea7">Code +</label>
+                        </div>
+
+                      </div>
+                      <div class="col-md-7 mb-4 pb-2">
+
+                        <div data-mdb-input-init class="form-outline form-white">
+                          <input type="text" id="form3Examplea8" class="form-control form-control-lg" />
+                          <label class="form-label" for="form3Examplea8">Phone Number</label>
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <div class="mb-4">
+                      <div data-mdb-input-init class="form-outline form-white">
+                        <input type="text" id="form3Examplea9" class="form-control form-control-lg" />
+                        <label class="form-label" for="form3Examplea9">Your Email</label>
+                      </div>
+                    </div>
+
+                    <div class="form-check d-flex justify-content-start mb-4 pb-3">
+                      <input class="form-check-input me-3" type="checkbox" value="" id="form2Example3c" />
+                      <label class="form-check-label text-white" for="form2Example3">
+                        I do accept the <a href="#!" class="text-white"><u>Terms and Conditions</u></a> of your
+                        site.
+                      </label>
+                    </div>
+
+                    <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-light btn-lg"
+                      data-mdb-ripple-color="dark">Register</button>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
